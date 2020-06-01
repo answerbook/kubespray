@@ -20,3 +20,4 @@
 - name: Prompt to continue to next node
   pause:
     prompt: 'Press RETURN to continue once the verification steps are completed. Press Ctrl+c to abort'
+  when: "'kube-node' in group_names"
