@@ -11,7 +11,7 @@
     token: {{ slack_token }}
     msg: "<@UJQDK12RH> the node upgrade on {{ inventory_hostname }} has completed. Please run the verification steps now."
     channel: '#infra-ops'
-    username: 'Kubespray upgrade on {{ inventory_hostname }} status'
+    username: "Kubespray upgrade in use.{{ tier }} status"
     icon_url: https://emoji.slack-edge.com/T025L26CL/logdna/0a49e8007cba98ea.png
     link_names: 1
     parse: 'none'
