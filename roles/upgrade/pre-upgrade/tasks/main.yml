@@ -5,7 +5,7 @@
     token: "{{ slack_token }}"
     msg: "<!subteam^SHPCYUSBC|@oncall> and <@UJQDK12RH> the node upgrade on {{ inventory_hostname }} has started."
     channel: '#infra-ops'
-    username: "Kubespray upgrade use.{{ tier }} status"
+    username: "Kubespray upgrade in use.{{ tier }} status"
     icon_url: https://emoji.slack-edge.com/T025L26CL/logdna/0a49e8007cba98ea.png
     link_names: 1
     parse: 'none'
