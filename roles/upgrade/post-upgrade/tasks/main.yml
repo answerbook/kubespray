@@ -8,7 +8,7 @@
 # Send notificaion to slack that the upgrade process has completed
 - name: Notify oncall that the upgrade process is starting on the node
   slack:
-    token: {{ slack_token }}
+    token: "{{ slack_token }}"
     msg: "<@UJQDK12RH> the node upgrade on {{ inventory_hostname }} has completed. Please run the verification steps now."
     channel: '#infra-ops'
     username: "Kubespray upgrade in use.{{ tier }} status"
