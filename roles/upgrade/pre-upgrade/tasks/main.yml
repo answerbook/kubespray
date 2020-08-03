@@ -3,7 +3,7 @@
 - name: Notify oncall that the upgrade process is starting on the node
   slack:
     token: "{{ slack_token }}"
-    msg: "<!subteam^SHPCYUSBC|@oncall> and <@UJQDK12RH> the node upgrade on {{ inventory_hostname }} has started."
+    msg: "<!subteam^SHPCYUSBC|@oncall> and <@{{ slack_user }}> the node upgrade on {{ inventory_hostname }} has started."
     channel: '#infra-ops'
     username: "Kubespray upgrade in use.{{ tier }} status"
     icon_url: https://emoji.slack-edge.com/T025L26CL/logdna/0a49e8007cba98ea.png
