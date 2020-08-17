@@ -25,7 +25,7 @@
 
 - name: bootstrap/ca_trust | update ca-certificates (Debian/Ubuntu/CoreOS)
   command: update-ca-certificates
-  when: vault_ca_cert.changed and ansible_os_family in ["Debian", "CoreOS", "Coreos", "Container Linux by CoreOS", "Flatcar", "Flatcar Container Linux by Kinvolk"]
+  when: vault_ca_cert.changed and ansible_os_family in ["Debian", "CoreOS", "Coreos", "Container Linux by CoreOS", "Flatcar", "Flatcar Container Linux by Kinvolk", "Flatcar", "Flatcar Container Linux by Kinvolk"]
 
 - name: bootstrap/ca_trust | update ca-certificates (RedHat)
   command: update-ca-trust extract
