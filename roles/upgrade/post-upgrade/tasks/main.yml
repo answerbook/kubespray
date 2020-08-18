@@ -4,3 +4,20 @@
   delegate_to: "{{ groups['kube-master'][0] }}"
   when:
     - needs_cordoning|default(false)
+
+# Send notificaion to slack that the upgrade process has completed
+- name: Notify oncall that the upgrade process is starting on the node
+  slack:
+    token: "{{ slack_token }}"
+    msg: "<@{{ slack_user }}> the node upgrade on {{ inventory_hostname }} has completed. Please run the verification steps now."
+    channel: '#infra-ops'
+    username: "Kubespray upgrade in use.{{ tier }} status"
+    icon_url: https://emoji.slack-edge.com/T025L26CL/logdna/0a49e8007cba98ea.png
+    link_names: 1
+    parse: 'none'
+  delegate_to: localhost
+
+- name: Prompt to continue to next node
+  pause:
+    prompt: 'Press RETURN to continue once the verification steps are completed. Press Ctrl+c to abort'
+  when: "'kube-node' in group_names"
